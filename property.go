@@ -138,7 +138,12 @@ type Option struct {
 type DateProperty struct {
 	ID   ObjectID     `json:"id,omitempty"`
 	Type PropertyType `json:"type"`
-	Date interface{}  `json:"date"`
+	Date Date         `json:"date"`
+}
+
+type Date struct {
+	Start string `json:"start"`
+	End   string `json:"end,omitempty"`
 }
 
 func (p DateProperty) GetType() PropertyType {
